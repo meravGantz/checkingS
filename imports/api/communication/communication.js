@@ -10,6 +10,7 @@ let demoSchema = {
             userMsg: "false/true",
             msgContent: "bla bla bla bbla"
         }
-    ]
+    ],
+    responded: "True/False (boolean)"
 
-}
+};
