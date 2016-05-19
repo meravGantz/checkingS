@@ -1,5 +1,7 @@
 import {Meteor} from 'meteor/meteor';
 import {Communication} from '../../api/communication/communication';
+import {Questions} from '../../api/questions/questions';
+
 Meteor.startup(()=>{
     if (Communication.find({}).count() == 0){
         Communication.insert(
@@ -19,6 +21,21 @@ Meteor.startup(()=>{
             }
         )
     }
+
+    if (Questions.find({}).count() == 0){
+        Questions.insert(
+            {
+                questionName: "isWorking",
+                latestAnswer: false,
+                notifyUserId: ['234324', '2324325435'],
+                questionType: "YES/NO"
+            }
+        )
+    }
+
+
+
+
 });
 
 let demoSchema = {

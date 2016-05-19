@@ -30,6 +30,15 @@ export default class AutomaticQuestionsPage extends React.Component{
                 <YesNoQuestion key={question._id} question={question}/>
             )
         });
+
+        return (
+            <div>
+                <h1>Auto questions</h1>
+            </div>
+        )
+
+
+
     }
 }
 

@@ -16,9 +16,9 @@ function composerFunction(props, onData){
     console.log("AutoQuesContainer")
     handle = Meteor.subscribe('allAutoQues');
     if (handle.ready()){
-        yesNoQues = Questions.find({questionType: YES/NO});
-        mulChoiseQues = Questions.find({questionType: Mul});
-        freeTextQues = Questions.find({questionType: FREE});
+        yesNoQues = Questions.find({questionType: 'YES/NO'});
+        mulChoiseQues = Questions.find({questionType: 'Mul'});
+        freeTextQues = Questions.find({questionType: 'FREE'});
         onData = (null, {yesNoQues, mulChoiseQues, freeTextQues});
     }
 }
