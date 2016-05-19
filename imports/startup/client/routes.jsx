@@ -2,10 +2,15 @@
 import React from 'react';
 import { Router, Route, browserHistory } from 'react-router';
 import App from '../../ui/pages/App.jsx';
+
+import OperatorBoard from '../../ui/pages/OperatorBoard.jsx';
+import OfflinePage from '../../ui/pages/OfflinePage.jsx';
+
 import MsgContainer from '../../ui/containers/MsgContainer.jsx';
+
 const Demo = (props)=>{
     return (
-        <h1>Jonathan replace it</h1>
+        <h1> </h1>
         )
 
 }
