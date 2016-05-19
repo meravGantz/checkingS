@@ -40,6 +40,7 @@ export default class msgBoard extends React.Component{
                 <h3>Chat Board </h3>
                 {messages}
                 <ReplyText textMsg={this.state.msgText} handleText={this.handleMsg} handleSubmit={this.handleSubmit}/>
+
             </div>
         )
     }
