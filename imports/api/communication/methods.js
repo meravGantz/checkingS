@@ -110,7 +110,7 @@ if (Meteor.isServer){
 
             // Since form enconding doesn't distinguish numbers and strings, we need
             // to parse it manually
-            return [ content.user_fb_id, content.sessionId, content.question ];
+            return [ content.userFbId, content.sessionId, content.question ];
         }
     })
 }

@@ -24,8 +24,6 @@ export default class YesNoQuestion extends React.Component{
         this.setState({Toggled: !this.state.Toggled});
         console.log("before sending " + this.state.Toggled);
         Meteor.call('updateState', this.props.question._id,  this.state.Toggled)
-
-
     }
     render(){
 
@@ -35,23 +33,27 @@ export default class YesNoQuestion extends React.Component{
             },
             toggle: {
                 marginBottom: 16,
+                width: '100%'
             },
         };
 
 
         return (
-            <div className="row">
-                <div className="col-md-2 zeroPadding">
-                    {this.props.question.questionName}
-                    <Toggle
-                            label="yes"
-                            labelPosition="right"
+            <div className="row singleQuestion">
+                {this.props.question.questionName}
+                <br></br>
+
+                <div className="col-md-offset-3 col-md-2 noDiv">לא</div>
+                <div className="col-md-2" id="toggleIcon">
+                <Toggle
+
                             style={styles.toggle}
                             defaultToggled={this.state.Toggled}
                             onToggle={this.handleState.bind(this)}
                             toggle={this.state.Toggled}
                         />
                 </div>
+                <div className="yesDiv col-md-2">כן</div>
             </div>
         );
     }
