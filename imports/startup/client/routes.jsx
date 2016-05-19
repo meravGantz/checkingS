@@ -2,6 +2,7 @@
 import React from 'react';
 import { Router, Route, browserHistory } from 'react-router';
 import App from '../../ui/pages/App.jsx';
+import {MessageBox} from '../../ui/components/MessageBox.jsx'
 
 import OperatorBoard from '../../ui/pages/OperatorBoard.jsx';
 import OfflinePage from '../../ui/pages/OfflinePage.jsx';
@@ -33,6 +34,7 @@ export const renderRoutes = () => (
             <Route path="/yonTemp" component={processesContainer}/>
             <Route path="/offlineBoard" component={Demo}/>
             <Route path="/adminBoard" component={AutomaticQuestionsContainer}/>
+            <Route path="/MessageBox" component={MessageBox}/>
         </Route>
     </Router>
 );
