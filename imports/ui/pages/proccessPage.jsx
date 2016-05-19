@@ -4,7 +4,7 @@
 
 import React from 'react';
 
-import Proccess from '../components/Proccess.jsx';
+import Process from '../components/Process.jsx';
 export default class ProccessPage extends React.Component{
     constructor(props){
         super(props);

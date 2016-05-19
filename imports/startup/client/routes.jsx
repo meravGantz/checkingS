@@ -6,7 +6,8 @@ import App from '../../ui/pages/App.jsx';
 import OperatorBoard from '../../ui/pages/OperatorBoard.jsx';
 import OfflinePage from '../../ui/pages/OfflinePage.jsx';
 
-import MsgContainer from '../../ui/containers/MsgContainer.jsx';
+import MsgContainer from '../../ui/containers/msgContainer.jsx';
+import processesContainer from '../../ui/containers/processesContainer.jsx';
 
 const Demo = (props)=>{
     return (
@@ -24,6 +25,7 @@ export const renderRoutes = () => (
     <Router history={browserHistory}>
         <Route path="/" component={App}>
             <Route path="/operator" component={MsgContainer}/>
+            <Route path="/yonTemp" component={processesContainer}/>
             <Route path="/offlineBoard" component={Demo}/>
             <Route path="/adminBoard" component={MeravTal}/>
         </Route>
