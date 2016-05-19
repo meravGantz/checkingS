@@ -26,7 +26,7 @@ export default class ProccessPage extends React.Component{
             return (
                 <Process key={process._id} process={process} count = {process.counter}
                          location  = {process.location} count = {process.processType} userIds = {process.userIds}
-                         handleFinish={this.handleFinish} handleConversation = {this.handleConversation{/>
+                         handleFinish={this.handleFinish} handleConversation = {this.handleConversation}/>
             )
         });
         return (
