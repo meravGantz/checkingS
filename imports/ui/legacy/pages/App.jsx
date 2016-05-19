@@ -1,16 +1,13 @@
 import React from 'react';
 
 export default class App extends React.Component{
-    constructor(props){
-        super(props);
-    }
     render(){
+        let child = this.props.children;
+        console.log("Sdf");
         return (
             <div className="container">
-               <h1> Hello Hackathon!</h1>
-                {this.props.children}
+                {child}
             </div>
         )
     }
 }
-
