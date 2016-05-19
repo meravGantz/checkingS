@@ -4,10 +4,8 @@ export const Processes = new Mongo.Collection('Processes');
 
 let demoSchema = {
     processType: "garbage",
-    location: "hayabok 12",
+    location: "הרב ברלין 5 ",
     finishedStatus: "true/false (boolean)",
     counter: 10,
     userIds: []
 };
-
-Processes.insert(demoSchema);

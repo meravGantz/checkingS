@@ -1,26 +1,26 @@
 import {Meteor} from 'meteor/meteor';
 import {Communication} from '../../api/communication/communication';
 import {Questions} from '../../api/questions/questions';
+import {Processes} from '../../api/processes/processes';
+//let demoSchema = {
+//    processType: "garbage",
+//    location: "הרב ברלין 5 ",
+//    finishedStatus: "true/false (boolean)",
+//    counter: 10,
+//    userIds: []
+//};
 
 Meteor.startup(()=>{
-    //if (Communication.find({}).count() == 0){
-    //    Communication.insert(
-    //        {
-    //            userFbId: "123",
-    //            messages: [
-    //                {
-    //                    userMsg: true,
-    //                    msgContent: "Hey there"
-    //                },
-    //                {
-    //                    userMsg: true,
-    //                    msgContent: "heya"
-    //                }
-    //            ],
-    //            responded: false
-    //        }
-    //    )
-    //}
+    if (Processes.find({}).count() == 0){
+        Processes.insert(
+            {
+                processType: "garbage",
+                location: "היבוק",
+                counter: 1,
+                userIds: ['977048099078699']
+            }
+        )
+    }
     if (Questions.find({}).count() != 0) {
         Questions.remove({});
     }

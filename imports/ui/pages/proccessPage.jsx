@@ -5,35 +5,91 @@
 import React from 'react';
 
 import Process from '../components/Process.jsx';
+import {Processes} from '../../api/processes/processes';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+import Subheader from 'material-ui/Subheader';
+import {List, ListItem} from 'material-ui/List';
+import FlatButton from 'material-ui/FlatButton';
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import RaisedButton from 'material-ui/RaisedButton';
+
 export default class ProccessPage extends React.Component{
-    constructor(props){
+    constructor(props) {
         super(props);
+        this.state = {
+            listState: false,
+            label: "פתח תהליכים",
+
+        };
         this.handleFinish = this.handleFinish.bind(this);
-        this.handleConversation = this.handleConversation.bind(this)
-    }
-
-    handleFinish(proccesID){
+        this.handleClick = this.handleClick.bind(this);
+        this.calculateCounter = this.calculateCounter.bind(this);
 
     }
-
-    handleConversation(proccesID){
+    calculateCounter(){
+        let counter = 0;
+        this.props.processes.map((process)=>{
+            counter +=process.userIds.length
+        })
+        return counter;
+    }
+    handleFinish(processID, userIds) {
+        Meteor.call('deleteProcess', processID, userIds, (err, result)=> {
+            if (err) {
+                console.log("error")
+            }
+            console.log("successful deletion")
+        });
 
     }
-
-
+    getChildContext() {
+        return {muiTheme: getMuiTheme()};
+    }
+    handleClick(){
+        let newLabel;
+        if (this.state.listState){
+            newLabel = "פתח תהליכים"
+        }else{
+            newLabel="סגור"
+        }
+        this.setState({listState: !this.state.listState, label: newLabel});
+    }
     render(){
         const processes = this.props.processes.map((process)=>{
             return (
-                <Process key={process._id} process={process} count = {process.counter}
-                         location  = {process.location} count = {process.processType} userIds = {process.userIds}
-                         handleFinish={this.handleFinish} handleConversation = {this.handleConversation}/>
+                <Process key={process._id} process={process} count={process.counter}
+                         location={process.location} type={process.processType} userIds={process.userIds}
+                         handleFinish={this.handleFinish} />
             )
         });
+        let textToWrite;
+        if (this.state.listState === "visible"){
+            textToWrite = "סגור תהליכים"
+        }
+        else{
+            textToWrite = this.state.buttonText + "\n" + processes.length + " תהליכים מחכים"
+        }
         return (
             <div>
-                <h1> Open Proccesses </h1>
-                {processes}
+                <h1> Open Processes </h1>
+                <RaisedButton
+                    label = {textToWrite}
+                    primary={true}
+                    onClick={this.handleClick}
+                />
+                <div>
+                    {this.calculateCounter()}
+                </div>
+                {this.state.listState?
+                    <List>
+                        <Subheader inset={true}>Folders</Subheader>
+                        {processes}
+                     </List>
+                    :
+                    null
+                }
             </div>
         )
     }
 }
+ProccessPage.childContextTypes = {muiTheme: React.PropTypes.object.isRequired};

@@ -31,3 +31,15 @@ h1 {
     width: 33%;
 }
 
+.msgBoard{
+    float: right;
+    width: 30%;
+}
+.processBoard{
+    float: left;
+    width: 70%
+}
+.operatorBoard{
+    width: 100%;
+    direction: ltr;
+}
