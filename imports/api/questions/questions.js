@@ -9,4 +9,4 @@ let demoSchema = {
     notifyUserId: ['234324', '2324325435'],
     questionType: "YES/NO (wil be constant)"
 
-};
+}
