@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import {composeWithTracker} from 'react-komposer';
 import {Communication} from '../../api/communication/communication';
-import MsgBoard from '../components/MsgBoard.jsx';
+import MsgBoard from '../components/msgBoard.jsx';
 function composerFunction(props, onData){
     let handle;
     let communication;
