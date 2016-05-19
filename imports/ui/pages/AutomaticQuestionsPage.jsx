@@ -27,7 +27,7 @@ export default class AutomaticQuestionsPage extends React.Component{
     render(){
         const yesNoQuestions = this.props.yesNoQues.map((question)=>{
             return (
-                <YesNoQuestion key={question._id} question={question} handleChangeState={this.handleDelete}/>
+                <YesNoQuestion key={question._id} question={question}/>
             )
         });
     }

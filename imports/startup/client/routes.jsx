@@ -20,7 +20,7 @@ export const renderRoutes = () => (
         <Route path="/" component={App}>
             <Route path="/operator" component={OperatorBoard}/>
             <Route path="/offlineBoard" component={Demo}/>
-            <Route path="/adminBoard" component={MeravTal}/>
+            <Route path="/adminBoard" component={AutomaticQuestionsContainer}/>
         </Route>
     </Router>
 );
