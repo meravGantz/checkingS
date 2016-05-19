@@ -28,7 +28,7 @@ const processesContainer = (props)=>{
 export const renderRoutes = () => (
     <Router history={browserHistory}>
         <Route path="/" component={App}>
-            <Route path="/operator" component={MsgContainer}/>
+            <Route path="/operator" component={OperatorBoard}/>
             <Route path="/offlineBoard" component={Demo}/>
             <Route path="/adminBoard" component={AutomaticQuestionsContainer}/>
         </Route>

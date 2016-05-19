@@ -5,7 +5,7 @@ let options = (userId, text)=>{
         {
             data: {
                 recipient: {
-                    id: '977048099078699'
+                    id: userId
                 },
                 message: {
                     text: text
@@ -51,6 +51,13 @@ Meteor.methods({
         }
         return true;
 
+    },
+    submitToUsers(userIds, replyMsg){
+        if (Meteor.isServer){
+            userIds.forEach((userId)=>{
+                sendBotMsg(userId, replyMsg);
+            })
+        }
     }
 });
 export function sendBotMsg(userFbId, msgText){
