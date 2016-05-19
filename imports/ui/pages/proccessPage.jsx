@@ -5,6 +5,7 @@
 import React from 'react';
 
 import Process from '../components/Process.jsx';
+import {Processes} from '../../api/processes/processes';
 export default class ProccessPage extends React.Component{
     constructor(props){
         super(props);
@@ -13,7 +14,13 @@ export default class ProccessPage extends React.Component{
     }
 
     handleFinish(proccesID){
-
+        Meteor.call('deleteProcess', proccesID, (err, result)=>{
+            if (err){
+                console.log("error")
+            }
+            console.log("successful deletion")
+        })
+        //Processes.deleteProcess(proccesID)
     }
 
     handleConversation(proccesID){
@@ -24,14 +31,14 @@ export default class ProccessPage extends React.Component{
     render(){
         const processes = this.props.processes.map((process)=>{
             return (
-                <Process key={process._id} process={process} count = {process.counter}
-                         location  = {process.location} count = {process.processType} userIds = {process.userIds}
+                <Process key={process._id} process = {process} count = {process.counter}
+                         location  = {process.location} type = {process.processType} userIds = {process.userIds}
                          handleFinish={this.handleFinish} handleConversation = {this.handleConversation}/>
             )
         });
         return (
             <div>
-                <h1> Open Proccesses </h1>
+                <h1> Open Processes </h1>
                 {processes}
             </div>
         )
