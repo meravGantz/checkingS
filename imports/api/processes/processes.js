@@ -5,5 +5,7 @@ export const Processes = new Mongo.Collection('Processes');
 let demoSchema = {
     processType: "garbage",
     location: "hayabok 12",
-    finishedStatus: "true/false (boolean)"
+    finishedStatus: "true/false (boolean)",
+    counter: 10,
+    userIds: []
 };
