@@ -5,6 +5,7 @@ export const Communication = new Mongo.Collection('Communication');
 //Communication Schema:
 let demoSchema = {
     userFbId: "Hayabok",
+    sessionId: "givenSessionId",
     messages: [
         {
             userMsg: "false/true",
