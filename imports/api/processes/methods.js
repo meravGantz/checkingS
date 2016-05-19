@@ -73,7 +73,7 @@ if (Meteor.isServer){
 
             // Since form enconding doesn't distinguish numbers and strings, we need
             // to parse it manually
-            return [ content.processType, content.location, content.userId ];
+            return [ content.processType, content.location, content.userFbId ];
         }
     })
 }
