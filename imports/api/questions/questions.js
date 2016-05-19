@@ -6,6 +6,7 @@ export const Questions = new Mongo.Collection('Questions');
 let demoSchema = {
     questionName: "Road 1 status(will be a constant)",
     latestAnswer: "closed (will be constant)",
-    notifyUserId: ['234324', '2324325435']
+    notifyUserId: ['234324', '2324325435'],
+    questionType: "YES/NO (wil be constant)"
 
 };
