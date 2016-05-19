@@ -17,9 +17,9 @@ function composerFunction(props, onData){
     handle = Meteor.subscribe('allAutoQues');
     if (handle.ready()){
         yesNoQues = Questions.find({questionType: YES/NO});
-        mulChoiseQues = Questions.find({questionType: Mul};
+        mulChoiseQues = Questions.find({questionType: Mul});
         freeTextQues = Questions.find({questionType: FREE});
-        onData = (null, yesNoQues, mulChoiseQues, freeTextQues);
+        onData = (null, {yesNoQues, mulChoiseQues, freeTextQues});
     }
 }
 export default composeWithTracker(composerFunction)(AutomaticQuestionsPage);
