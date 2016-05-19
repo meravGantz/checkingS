@@ -9,3 +9,5 @@ let demoSchema = {
     counter: 10,
     userIds: []
 };
+
+Processes.insert(demoSchema);

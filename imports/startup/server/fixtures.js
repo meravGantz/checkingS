@@ -3,26 +3,26 @@ import {Communication} from '../../api/communication/communication';
 import {Questions} from '../../api/questions/questions';
 
 Meteor.startup(()=>{
-    if (Communication.find({}).count() == 0){
-        Communication.insert(
-            {
-                userFbId: "123",
-                messages: [
-                    {
-                        userMsg: true,
-                        msgContent: "Hey there"
-                    },
-                    {
-                        userMsg: true,
-                        msgContent: "heya"
-                    }
-                ],
-                responded: false
-            }
-        )
-    }
+    //if (Communication.find({}).count() == 0){
+    //    Communication.insert(
+    //        {
+    //            userFbId: "123",
+    //            messages: [
+    //                {
+    //                    userMsg: true,
+    //                    msgContent: "Hey there"
+    //                },
+    //                {
+    //                    userMsg: true,
+    //                    msgContent: "heya"
+    //                }
+    //            ],
+    //            responded: false
+    //        }
+    //    )
+    //}
+    if (Questions.find({}).count() == 0){
 
-    if (Questions.find({}).count() == 2){
         Questions.insert(
             {
                 questionName: "isWorking",
@@ -40,9 +40,6 @@ Meteor.startup(()=>{
             }
         )
     }
-
-
-
 
 });
 
