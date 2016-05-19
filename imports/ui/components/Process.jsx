@@ -9,7 +9,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import Avatar from 'material-ui/Avatar';
 import {List, ListItem} from 'material-ui/List';
 import ActionInfo from 'material-ui/svg-icons/action/info';
-
+import RaisedButton from 'material-ui/RaisedButton';
 
 import {red500, yellow500, blue500} from 'material-ui/styles/colors';
 export default class Process extends React.Component{
@@ -49,8 +49,16 @@ export default class Process extends React.Component{
                     primaryText={this.props.process.location}
                     secondaryText={this.props.process.counter}
                 />
-                <button onClick={this.handleFinish}> סיים טיפול  </button>
-                <button onClick={this.handleFinish}> העבר לנציג </button>
+                <RaisedButton
+                    label = "סיים טיפול"
+                    primary={true}
+                    onClick={this.handleFinish}
+                />
+                <RaisedButton
+                    label = "העבר לנציג"
+                    primary={true}
+                    onClick={this.handleConversation}
+                />
 
             </div>
         )
