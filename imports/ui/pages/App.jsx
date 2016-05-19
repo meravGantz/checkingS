@@ -1,15 +1,22 @@
 import React from 'react';
-
+import {Navbar} from 'react-bootstrap'
 export default class App extends React.Component{
     constructor(props){
         super(props);
     }
     render(){
         return (
-            <div className="container">
-               <h1> Hello Hackathon!</h1>
-                {this.props.children}
+            <div>
+                <Navbar inverse>
+                    <Navbar.Brand>
+                        <a href="#">City-Bot</a>
+                    </Navbar.Brand>
+                </Navbar>
+                <div className="container">
+                    {this.props.children}
+                </div>
             </div>
+
         )
     }
 }
