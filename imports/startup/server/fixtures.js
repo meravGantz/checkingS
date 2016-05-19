@@ -3,7 +3,7 @@ import {Communication} from '../../api/communication/communication';
 import {Questions} from '../../api/questions/questions';
 
 Meteor.startup(()=>{
-    if (Communication.find({}).count() == 0){
+    if (Communication.find({}).count()== 0){
         Communication.insert(
             {
                 userFbId: "123",
@@ -22,11 +22,28 @@ Meteor.startup(()=>{
         )
     }
 
-    if (Questions.find({}).count() == 0){
+    if (Questions.find({}).count() != 0){
+        Questions.remove({});
         Questions.insert(
             {
-                questionName: "isWorking",
-                latestAnswer: false,
+                questionName: "האם כביש 1 פתוח?",
+                latestAnswer: true,
+                notifyUserId: ['234324', '2324325435'],
+                questionType: "YES/NO"
+            }
+        )
+        Questions.insert(
+            {
+                questionName: "האם מתקיימים לימודים בבתי הספר?",
+                latestAnswer: true,
+                notifyUserId: ['234324', '2324325435'],
+                questionType: "YES/NO"
+            }
+        )
+        Questions.insert(
+            {
+                questionName: "האם מתקיימים לימודים אקדמים?",
+                latestAnswer: true,
                 notifyUserId: ['234324', '2324325435'],
                 questionType: "YES/NO"
             }
