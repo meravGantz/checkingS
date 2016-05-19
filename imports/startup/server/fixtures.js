@@ -3,29 +3,6 @@ import {Communication} from '../../api/communication/communication';
 import {Questions} from '../../api/questions/questions';
 
 Meteor.startup(()=>{
-<<<<<<< HEAD
-    if (Communication.find({}).count()== 0){
-        Communication.insert(
-            {
-                userFbId: "123",
-                messages: [
-                    {
-                        userMsg: true,
-                        msgContent: "Hey there"
-                    },
-                    {
-                        userMsg: true,
-                        msgContent: "heya"
-                    }
-                ],
-                responded: false
-            }
-        )
-    }
-
-    if (Questions.find({}).count() != 0){
-        Questions.remove({});
-=======
     //if (Communication.find({}).count() == 0){
     //    Communication.insert(
     //        {
@@ -44,8 +21,10 @@ Meteor.startup(()=>{
     //        }
     //    )
     //}
+    if (Questions.find({}).count() != 0) {
+        Questions.remove({});
+    }
     if (Questions.find({}).count() == 0){
->>>>>>> 73f1f275cc1c567275f73fc96bdb9cbab9ff2e0e
         Questions.insert(
             {
                 questionName: "האם כביש 1 פתוח?",
@@ -53,7 +32,7 @@ Meteor.startup(()=>{
                 notifyUserId: ['234324', '2324325435'],
                 questionType: "YES/NO"
             }
-        )
+        );
         Questions.insert(
             {
                 questionName: "האם מתקיימים לימודים בבתי הספר?",
@@ -61,7 +40,7 @@ Meteor.startup(()=>{
                 notifyUserId: ['234324', '2324325435'],
                 questionType: "YES/NO"
             }
-        )
+        );
         Questions.insert(
             {
                 questionName: "האם מתקיימים לימודים אקדמים?",
