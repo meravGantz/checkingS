@@ -47,6 +47,7 @@ export default class AutomaticQuestionsPage extends React.Component{
 
                         תחבורה ציבורית
                     </p>
+                    <hr/>
                     <p className="Bullets">
                     {publicTransportation}
                         </p>
@@ -56,6 +57,7 @@ export default class AutomaticQuestionsPage extends React.Component{
 
                     מוסדות חינוך
                     </p>
+                    <hr/>
                     <p className="Bullets">
                     {education}
                         </p>
@@ -64,6 +66,7 @@ export default class AutomaticQuestionsPage extends React.Component{
                     <p className="autoQuesTitle" id="roadsTitle">
                     חסימות כבישים
                     </p>
+                    <hr/>
                     <p className="Bullets">
                         {roads}
                         </p>
