@@ -6,8 +6,10 @@ import App from '../../ui/pages/App.jsx';
 import OperatorBoard from '../../ui/pages/OperatorBoard.jsx';
 import OfflinePage from '../../ui/pages/OfflinePage.jsx';
 
-import MsgContainer from '../../ui/containers/msgContainer.jsx';
-import processesContainer from '../../ui/containers/processesContainer.jsx';
+import MsgContainer from '../../ui/containers/MsgContainer.jsx';
+import AutomaticQuestionsContainer from '../../ui/containers/AutomaticQuestionsContainer.jsx';
+
+
 
 const Demo = (props)=>{
     return (
@@ -27,7 +29,7 @@ export const renderRoutes = () => (
             <Route path="/operator" component={MsgContainer}/>
             <Route path="/yonTemp" component={processesContainer}/>
             <Route path="/offlineBoard" component={Demo}/>
-            <Route path="/adminBoard" component={MeravTal}/>
+            <Route path="/adminBoard" component={AutomaticQuestionsContainer}/>
         </Route>
     </Router>
 );
