@@ -27,28 +27,70 @@ Meteor.startup(()=>{
     if (Questions.find({}).count() == 0){
         Questions.insert(
             {
-                questionName: "האם כביש 1 פתוח?",
+                questionName: "כביש 1 פתוח",
                 latestAnswer: true,
                 notifyUserId: ['234324', '2324325435'],
-                questionType: "YES/NO"
+                questionType: "YES/NO",
+                questionCategory: "roads"
+
             }
         );
         Questions.insert(
             {
-                questionName: "האם מתקיימים לימודים בבתי הספר?",
+                questionName: "קיום לימודים בבתי הספר",
                 latestAnswer: true,
                 notifyUserId: ['234324', '2324325435'],
-                questionType: "YES/NO"
+                questionType: "YES/NO",
+                questionCategory: "education"
             }
         );
         Questions.insert(
             {
-                questionName: "האם מתקיימים לימודים אקדמים?",
+                questionName: "קיום לימודים במוסדות אקדמיים",
                 latestAnswer: true,
                 notifyUserId: ['234324', '2324325435'],
-                questionType: "YES/NO"
+                questionType: "YES/NO",
+                questionCategory: "education"
+
             }
-        )
+        );
+        Questions.insert(
+            {
+                questionName: "קיום פעילות בגנים",
+                latestAnswer: true,
+                notifyUserId: ['234324', '2324325435'],
+                questionType: "YES/NO",
+                questionCategory: "education"
+
+            }
+        );
+        Questions.insert(
+            {
+                questionName: "רכבת קלה פעילה",
+                latestAnswer: true,
+                notifyUserId: ['234324', '2324325435'],
+                questionType: "YES/NO",
+                questionCategory: "publicTransportation"
+            }
+        );
+        Questions.insert(
+            {
+                questionName: "פעילות אוטובוסים",
+                latestAnswer: true,
+                notifyUserId: ['234324', '2324325435'],
+                questionType: "YES/NO",
+                questionCategory: "publicTransportation"
+            }
+        );
+        Questions.insert(
+            {
+                questionName: "פעילות מוניות שירות",
+                latestAnswer: true,
+                notifyUserId: ['234324', '2324325435'],
+                questionType: "YES/NO",
+                questionCategory: "publicTransportation"
+            }
+        );
     }
 
 });

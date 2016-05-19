@@ -7,6 +7,7 @@ let demoSchema = {
     questionName: "Road 1 status(will be a constant)",
     latestAnswer: "closed (will be constant)",
     notifyUserId: ['234324', '2324325435'],
-    questionType: "YES/NO (wil be constant)"
+    questionType: "YES/NO (wil be constant)",
+    questionCategory: "roads (will be a constant)"
 
 }

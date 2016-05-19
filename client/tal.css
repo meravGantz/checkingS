@@ -1,0 +1,59 @@
+.autoQuesCategory{
+    font-family: Alef;
+    direction: rtl;
+    background: gray;
+    width: 350px;
+    height:600px;
+    padding-top: 20px;
+
+}
+
+.allAutoCategories{
+    margin-bottom: 30px;
+}
+
+.autoQuesTitle{
+    font-family: Alef;
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+
+}
+#pubTransportation{
+    margin-bottom: 50px;
+    margin-left: 0px;
+    margin-right: 30px;
+    margin-top: 40px;
+
+}
+
+#education{
+    margin-bottom: 50px;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-top: 40px;
+
+}
+
+#roads{
+    margin-bottom: 70px;
+    margin-left: 10px;
+    margin-right: 0px;
+    margin-top: 40px;
+
+}
+
+.Bullets{
+    direction: rtl;
+    font-size: 14px;
+    margin-top: 50px;
+}
+
+.singleQuestion{
+    text-align: center;
+}
+
+#toggleIcon{
+    margin-left: 90px;
+}

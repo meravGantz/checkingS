@@ -40,17 +40,21 @@ export default class YesNoQuestion extends React.Component{
 
 
         return (
-            <div className="row">
-                <div className="col-md-2 zeroPadding">
-                    {this.props.question.questionName}
-                    <Toggle
-                            label="yes"
+            <div className="row singleQuestion">
+                {this.props.question.questionName}
+                <br></br>
+
+                <div className="col-lg-4" id="toggleIcon">
+
+                <Toggle
+                            label= "כן"
                             labelPosition="right"
                             style={styles.toggle}
                             defaultToggled={this.state.Toggled}
                             onToggle={this.handleState.bind(this)}
                             toggle={this.state.Toggled}
                         />
+
                 </div>
             </div>
         );

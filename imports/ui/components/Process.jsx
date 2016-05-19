@@ -52,7 +52,6 @@ export default class Process extends React.Component{
         let callText;
         if (this.props.process.processType === "garbage"){
             imgSrc = "";
-            callText = "קריאות לפינוי זבל התקבלו מרחוב";
         }
         return (
             <div className="row">
@@ -61,16 +60,19 @@ export default class Process extends React.Component{
                     rightIcon={<ActionInfo />}
                     primaryText={this.props.process.location}
                     secondaryText={this.props.process.counter}
+                    style={{width:300}}
                 />
                 <RaisedButton
                     label = "סיים טיפול"
                     primary={true}
                     onClick={this.handleFinish}
+                    style={{padding:2, align:"center"}}
                 />
                 <RaisedButton
                     label = "העבר לנציג"
                     primary={true}
                     onClick={this.handleConversation}
+                    style={{padding:2, align:"center"}}
                 />
                 {this.state.replyBool?
                     <div className="row">

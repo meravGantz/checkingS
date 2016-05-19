@@ -27,6 +27,7 @@ export const renderRoutes = () => (
             <Route path="/operator" component={OperatorBoard}/>
             <Route path="/offlineBoard" component={Demo}/>
             <Route path="/adminBoard" component={AutomaticQuestionsContainer}/>
+            <Route path="/yontemp" component={processesContainer}/>
         </Route>
     </Router>
 );

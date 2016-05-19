@@ -19,6 +19,7 @@ export default class ProccessPage extends React.Component{
         this.state = {
             listState: false,
             label: "פתח תהליכים",
+
         };
         this.handleFinish = this.handleFinish.bind(this);
         this.handleClick = this.handleClick.bind(this);
@@ -61,12 +62,18 @@ export default class ProccessPage extends React.Component{
                          handleFinish={this.handleFinish} />
             )
         });
-
+        let textToWrite;
+        if (this.state.listState === "visible"){
+            textToWrite = "סגור תהליכים"
+        }
+        else{
+            textToWrite = this.state.buttonText + "\n" + processes.length + " תהליכים מחכים"
+        }
         return (
             <div>
                 <h1> Open Processes </h1>
                 <RaisedButton
-                    label={this.state.label}
+                    label = {textToWrite}
                     primary={true}
                     onClick={this.handleClick}
                 />
