@@ -15,7 +15,6 @@ export default class AutomaticQuestionsPage extends React.Component{
         super(props);
 
 
-        this.handleDelete = this.handleDelete.bind(this);
 
     }
 
@@ -30,6 +29,16 @@ export default class AutomaticQuestionsPage extends React.Component{
                 <YesNoQuestion key={question._id} question={question}/>
             )
         });
+
+        return (
+            <div>
+                <h1>Auto questions</h1>
+                {yesNoQuestions}
+            </div>
+        )
+
+
+
     }
 }
 
