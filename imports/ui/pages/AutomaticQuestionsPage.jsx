@@ -13,15 +13,11 @@ import YesNoQuestion from '../components/YesNoQuestion.jsx';
 export default class AutomaticQuestionsPage extends React.Component{
     constructor(props){
         super(props);
-
-
-
     }
 
     getChildContext() {
         return {muiTheme: getMuiTheme()};
     }
-
 
     render(){
         const education = this.props.educationQuestions.map((question)=>{

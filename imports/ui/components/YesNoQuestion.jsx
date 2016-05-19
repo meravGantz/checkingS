@@ -24,8 +24,6 @@ export default class YesNoQuestion extends React.Component{
         this.setState({Toggled: !this.state.Toggled});
         console.log("before sending " + this.state.Toggled);
         Meteor.call('updateState', this.props.question._id,  this.state.Toggled)
-
-
     }
     render(){
 

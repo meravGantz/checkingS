@@ -1,5 +1,7 @@
 export const Constants = {
     PUBLIC_TRANSPORTATION: "publicTransportation",
     EDUCATION: "education",
-    ROADS: "roads"
-}
+    ROADS: "roads",
+    UNIVERSITY: "university",
+    SCHOOL: "school"
+};
