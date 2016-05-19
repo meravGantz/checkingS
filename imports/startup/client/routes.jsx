@@ -8,7 +8,7 @@ import OfflinePage from '../../ui/pages/OfflinePage.jsx';
 
 import MsgContainer from '../../ui/containers/msgContainer.jsx';
 import AutomaticQuestionsContainer from '../../ui/containers/AutomaticQuestionsContainer.jsx';
-
+import processesContainer from '../../ui/containers/processesContainer.jsx'
 const Demo = (props)=>{
     return (
         <h1> </h1>
@@ -21,11 +21,7 @@ const MeravTal = (props)=>{
         )
 
 }
-const processesContainer = (props)=>{
-    return (
-        <h1>Dog</h1>
-    )
-}
+
 export const renderRoutes = () => (
     <Router history={browserHistory}>
         <Route path="/" component={App}>

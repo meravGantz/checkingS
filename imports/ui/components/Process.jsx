@@ -6,7 +6,11 @@ import React from 'react';
 import {Link} from 'react-router';
 import FontIcon from 'material-ui/FontIcon';
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import ActionDelete from '../../../node_modules/material-ui/svg-icons/action/delete';
+import Avatar from 'material-ui/Avatar';
+import {List, ListItem} from 'material-ui/List';
+import ActionInfo from 'material-ui/svg-icons/action/info';
+
+
 import {red500, yellow500, blue500} from 'material-ui/styles/colors';
 export default class Process extends React.Component{
     constructor(props){
@@ -38,15 +42,16 @@ export default class Process extends React.Component{
         return (
 
             <div className="row">
-                <div className="col-md-2 zeroPadding">
-                    <img src = {imgSrc}></img>
-                    {this.props.process.counter}
-                     {callText}
-                     {this.props.process.location}
 
-                </div>
+                <ListItem
+                    leftAvatar={<Avatar icon={imgSrc} />}
+                    rightIcon={<ActionInfo />}
+                    primaryText={this.props.process.location}
+                    secondaryText={this.props.process.counter}
+                />
                 <button onClick={this.handleFinish}> סיים טיפול  </button>
                 <button onClick={this.handleFinish}> העבר לנציג </button>
+
             </div>
         )
     }
