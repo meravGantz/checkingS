@@ -14,57 +14,52 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import RaisedButton from 'material-ui/RaisedButton';
 
 export default class ProccessPage extends React.Component{
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            listState: "hidden",
-            buttonText :"פתח תהליכים"
+            listState: false,
+            label: "פתח תהליכים",
+
         };
         this.handleFinish = this.handleFinish.bind(this);
-        this.handleConversation = this.handleConversation.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.calculateCounter = this.calculateCounter.bind(this);
 
     }
-
-    handleFinish(proccesID){
-        Meteor.call('deleteProcess', proccesID, (err, result)=>{
-            if (err){
+    calculateCounter(){
+        let counter = 0;
+        this.props.processes.map((process)=>{
+            counter +=process.userIds.length
+        })
+        return counter;
+    }
+    handleFinish(processID, userIds) {
+        Meteor.call('deleteProcess', processID, userIds, (err, result)=> {
+            if (err) {
                 console.log("error")
             }
             console.log("successful deletion")
         });
-        //Processes.deleteProcess(proccesID)
-    }
 
+    }
     getChildContext() {
         return {muiTheme: getMuiTheme()};
     }
-    handleConversation(proccesID){
-
-    }
     handleClick(){
-        let newState;
-        let text;
-        if (this.state.listState === "hidden"){
-            newState = "visible"
-            text = "סגור תהליכים"
+        let newLabel;
+        if (this.state.listState){
+            newLabel = "פתח תהליכים"
+        }else{
+            newLabel="סגור"
         }
-        else{
-            newState = "hidden"
-            text = "פתח תהליכים"
-        }
-
-        this.setState({listState: newState})
-        this.setState({buttonText: text})
-
+        this.setState({listState: !this.state.listState, label: newLabel});
     }
-
     render(){
         const processes = this.props.processes.map((process)=>{
             return (
-                <Process key={process._id} process = {process} count = {process.counter}
-                         location  = {process.location} type = {process.processType} userIds = {process.userIds}
-                         handleFinish={this.handleFinish} handleConversation = {this.handleConversation}/>
+                <Process key={process._id} process={process} count={process.counter}
+                         location={process.location} type={process.processType} userIds={process.userIds}
+                         handleFinish={this.handleFinish} />
             )
         });
         let textToWrite;
@@ -77,19 +72,22 @@ export default class ProccessPage extends React.Component{
         return (
             <div>
                 <h1> Open Processes </h1>
-
                 <RaisedButton
                     label = {textToWrite}
                     primary={true}
                     onClick={this.handleClick}
                 />
-                <div style={{visibility:this.state.listState}}>
-                <List>
-                        {processes}
-                </List>
+                <div>
+                    {this.calculateCounter()}
                 </div>
-
-
+                {this.state.listState?
+                    <List>
+                        <Subheader inset={true}>Folders</Subheader>
+                        {processes}
+                     </List>
+                    :
+                    null
+                }
             </div>
         )
     }
