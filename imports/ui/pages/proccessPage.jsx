@@ -17,12 +17,20 @@ export default class ProccessPage extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            listState: "hidden"
+            listState: false,
+            label: "פתח תהליכים",
         };
         this.handleFinish = this.handleFinish.bind(this);
-        this.handleConversation = this.handleConversation.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.calculateCounter = this.calculateCounter.bind(this);
 
+    }
+    calculateCounter(){
+        let counter = 0;
+        this.props.processes.map((process)=>{
+            counter +=process.userIds.length
+        })
+        return counter;
     }
     handleFinish(processID, userIds) {
         Meteor.call('deleteProcess', processID, userIds, (err, result)=> {
@@ -37,17 +45,13 @@ export default class ProccessPage extends React.Component{
         return {muiTheme: getMuiTheme()};
     }
     handleClick(){
-        let newState;
-        if (this.state.listState === "hidden"){
-            newState = "visible"
+        let newLabel;
+        if (this.state.listState){
+            newLabel = "פתח תהליכים"
+        }else{
+            newLabel="סגור"
         }
-        else{
-            newState = "hidden"
-        }
-
-        this.setState({listState: newState})
-        console.log(this.state.listState)
-
+        this.setState({listState: !this.state.listState, label: newLabel});
     }
     render(){
         const processes = this.props.processes.map((process)=>{
@@ -61,18 +65,22 @@ export default class ProccessPage extends React.Component{
         return (
             <div>
                 <h1> Open Processes </h1>
-
                 <RaisedButton
-                    label = "פתח תהליכים"
+                    label={this.state.label}
                     primary={true}
                     onClick={this.handleClick}
                 />
-                <div style={{visibility:this.state.listState}}>
-                <List>
-                    <Subheader inset={true}>Folders</Subheader>
-                        {processes}
-                </List>
+                <div>
+                    {this.calculateCounter()}
                 </div>
+                {this.state.listState?
+                    <List>
+                        <Subheader inset={true}>Folders</Subheader>
+                        {processes}
+                     </List>
+                    :
+                    null
+                }
             </div>
         )
     }
