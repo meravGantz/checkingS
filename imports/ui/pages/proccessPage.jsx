@@ -17,7 +17,8 @@ export default class ProccessPage extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            listState: "hidden"
+            listState: "hidden",
+            buttonText :"פתח תהליכים"
         };
         this.handleFinish = this.handleFinish.bind(this);
         this.handleConversation = this.handleConversation.bind(this);
@@ -43,15 +44,18 @@ export default class ProccessPage extends React.Component{
     }
     handleClick(){
         let newState;
+        let text;
         if (this.state.listState === "hidden"){
             newState = "visible"
+            text = "סגור תהליכים"
         }
         else{
             newState = "hidden"
+            text = "פתח תהליכים"
         }
 
         this.setState({listState: newState})
-        console.log(this.state.listState)
+        this.setState({buttonText: text})
 
     }
 
@@ -63,19 +67,24 @@ export default class ProccessPage extends React.Component{
                          handleFinish={this.handleFinish} handleConversation = {this.handleConversation}/>
             )
         });
-
+        let textToWrite;
+        if (this.state.listState === "visible"){
+            textToWrite = "סגור תהליכים"
+        }
+        else{
+            textToWrite = this.state.buttonText + "\n" + processes.length + " תהליכים מחכים"
+        }
         return (
             <div>
                 <h1> Open Processes </h1>
 
                 <RaisedButton
-                    label = "פתח תהליכים"
+                    label = {textToWrite}
                     primary={true}
                     onClick={this.handleClick}
                 />
                 <div style={{visibility:this.state.listState}}>
                 <List>
-                    <Subheader inset={true}>Folders</Subheader>
                         {processes}
                 </List>
                 </div>
