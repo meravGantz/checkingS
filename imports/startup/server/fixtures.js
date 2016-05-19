@@ -21,11 +21,30 @@ Meteor.startup(()=>{
     //        }
     //    )
     //}
+    if (Questions.find({}).count() != 0) {
+        Questions.remove({});
+    }
     if (Questions.find({}).count() == 0){
         Questions.insert(
             {
-                questionName: "isWorking",
-                latestAnswer: false,
+                questionName: "האם כביש 1 פתוח?",
+                latestAnswer: true,
+                notifyUserId: ['234324', '2324325435'],
+                questionType: "YES/NO"
+            }
+        );
+        Questions.insert(
+            {
+                questionName: "האם מתקיימים לימודים בבתי הספר?",
+                latestAnswer: true,
+                notifyUserId: ['234324', '2324325435'],
+                questionType: "YES/NO"
+            }
+        );
+        Questions.insert(
+            {
+                questionName: "האם מתקיימים לימודים אקדמים?",
+                latestAnswer: true,
                 notifyUserId: ['234324', '2324325435'],
                 questionType: "YES/NO"
             }

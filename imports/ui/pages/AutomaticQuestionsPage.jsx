@@ -32,7 +32,6 @@ export default class AutomaticQuestionsPage extends React.Component{
 
         return (
             <div>
-                <h1>Auto questions</h1>
                 {yesNoQuestions}
             </div>
         )
