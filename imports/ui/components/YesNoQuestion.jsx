@@ -35,6 +35,7 @@ export default class YesNoQuestion extends React.Component{
             },
             toggle: {
                 marginBottom: 16,
+                width: '100%'
             },
         };
 
@@ -44,18 +45,17 @@ export default class YesNoQuestion extends React.Component{
                 {this.props.question.questionName}
                 <br></br>
 
-                <div className="col-lg-4" id="toggleIcon">
-
+                <div className="col-md-offset-3 col-md-2 noDiv">לא</div>
+                <div className="col-md-2" id="toggleIcon">
                 <Toggle
-                            label= "כן"
-                            labelPosition="right"
+
                             style={styles.toggle}
                             defaultToggled={this.state.Toggled}
                             onToggle={this.handleState.bind(this)}
                             toggle={this.state.Toggled}
                         />
-
                 </div>
+                <div className="yesDiv col-md-2">כן</div>
             </div>
         );
     }

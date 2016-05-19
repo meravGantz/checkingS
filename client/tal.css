@@ -1,5 +1,19 @@
+@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+
+
+hr {
+    display: block;
+    height: 1px;
+    width:82%;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0 auto;
+    padding: 0;
+    margin-bottom: 60px;
+
+}
 .autoQuesCategory{
-    font-family: Alef;
+    font-family: "Alef Hebrew";
     direction: rtl;
     background: gray;
     width: 350px;
@@ -13,10 +27,10 @@
 }
 
 .autoQuesTitle{
-    font-family: Alef;
+    font-family: "Alef Hebrew";
     font-weight: bold;
     text-align: center;
-    font-size: 30px;
+    font-size: 33px;
     padding: 10px;
 
 }
@@ -48,12 +62,25 @@
     direction: rtl;
     font-size: 14px;
     margin-top: 50px;
+    margin: 20px;
 }
 
 .singleQuestion{
     text-align: center;
+    font-size: 20px;
+    margin: 20px;
 }
 
 #toggleIcon{
-    margin-left: 90px;
+    padding: 8px;
+
 }
+
+.noDiv{
+
+}
+
+.yesDiv{
+
+}
+
