@@ -22,10 +22,18 @@ Meteor.startup(()=>{
         )
     }
 
-    if (Questions.find({}).count() == 0){
+    if (Questions.find({}).count() == 2){
         Questions.insert(
             {
                 questionName: "isWorking",
+                latestAnswer: false,
+                notifyUserId: ['234324', '2324325435'],
+                questionType: "YES/NO"
+            }
+        )
+        Questions.insert(
+            {
+                questionName: "כביש 1 פתוח?",
                 latestAnswer: false,
                 notifyUserId: ['234324', '2324325435'],
                 questionType: "YES/NO"

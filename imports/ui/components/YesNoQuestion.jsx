@@ -12,6 +12,7 @@ export default class YesNoQuestion extends React.Component{
     constructor(props){
         super(props);
         this.state = {Toggled: this.props.question.latestAnswer};
+        console.log(this.props.question.latestAnswer);
 
     }
 
@@ -19,8 +20,11 @@ export default class YesNoQuestion extends React.Component{
         return {muiTheme: getMuiTheme()};
     }
     handleState(){
+        console.log(this.props.question.latestAnswer);
         this.setState({Toggled: !this.state.Toggled});
+        console.log("before sending " + this.state.Toggled);
         Meteor.call('updateState', this.props.question._id,  this.state.Toggled)
+
 
     }
     render(){
@@ -38,8 +42,10 @@ export default class YesNoQuestion extends React.Component{
         return (
             <div className="row">
                 <div className="col-md-2 zeroPadding">
-                        <Toggle
-                            label={this.props.question.questionName}
+                    {this.props.question.questionName}
+                    <Toggle
+                            label="yes"
+                            labelPosition="right"
                             style={styles.toggle}
                             defaultToggled={this.state.Toggled}
                             onToggle={this.handleState.bind(this)}
