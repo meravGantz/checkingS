@@ -71,22 +71,16 @@ export default class ProccessPage extends React.Component{
             textToWrite = this.state.label
         }
         return (
-            <div>
-                <h1> Open Processes </h1>
+            <div className = "totalCount">
+                <h1> תהליכים פתוחים </h1>
                 <RaisedButton
                     label = {textToWrite}
                     primary={true}
                     onClick={this.handleClick}
                 />
-                <div>
-                    <Badge
-                        badgeContent={this.calculateCounter()}
-                        primary={true}
-                    ></Badge>
-
-                </div>
+                <Badge badgeContent={this.calculateCounter()} primary={true} ></Badge>
                 {this.state.listState?
-                    <div style={{background:"black", width:350}}>
+                    <div style={{background:"gray", width:450}}>
                         {processes}
                      </div>
                     :
