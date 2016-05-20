@@ -63,18 +63,11 @@ export default class ProccessPage extends React.Component{
                          handleFinish={this.handleFinish} />
             )
         });
-        let textToWrite;
-        if (this.state.listState === "visible"){
-            textToWrite = this.state.label
-        }
-        else{
-            textToWrite = this.state.label
-        }
         return (
             <div className = "totalCount">
                 <h1> תהליכים פתוחים </h1>
                 <RaisedButton
-                    label = {textToWrite}
+                    label = {this.state.label}
                     primary={true}
                     onClick={this.handleClick}
                 />

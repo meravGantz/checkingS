@@ -26,11 +26,9 @@
 .msgBoard {
     background-color: #dedede;
     float: right;
-    height: 570px;
+    height: 90vh;
     width: 500px;
-
 }
-
 .reply {
     margin-left: 35px;
     position: absolute;
@@ -40,7 +38,7 @@
 }
 .scrollbar{
     float: right;
-    height: 470px;
+    height: 650px;
     width: 100%;
     background: #dedede;
     overflow-y: scroll;
@@ -66,11 +64,8 @@
 
 #finish_it {
     position: absolute;
-    top: -490px;
+    top: -700px;
     background-color : transparent;
     left: -35px;
 }
 
-.middleMsgBoard {
-    position: relative;
-}
