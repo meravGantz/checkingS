@@ -26,7 +26,7 @@ export const renderRoutes = () => (
     <Router history={browserHistory}>
         <Route path="/" component={App}>
             <Route path="/operator" component={OperatorBoard}/>
-            <Route path="/offlineBoard" component={Demo}/>
+            <Route path="/offlineBoard" component={OfflinePage}/>
             <Route path="/adminBoard" component={AutomaticQuestionsContainer}/>
             <Route path="/MessageBox" component={MessageBox}/>
             <Route path="/yontemp" component={processesContainer}/>
