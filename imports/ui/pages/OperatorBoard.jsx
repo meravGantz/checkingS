@@ -8,12 +8,16 @@ export default class App extends React.Component{
     render(){
         return (
             <div className="operatorBoard">
-                <div className="msgBoard">
-                    <MsgContainer />
+                <div className="col-md-6">
+                    <div className="processBoard">
+                        <ProcessPage />
+                    </div>
                 </div>
-                <div className="processBoard">
-                    <ProcessPage />
-                </div>
+               <div className="col-md-6">
+                    <div className="msgBoard">
+                        <MsgContainer />
+                    </div>
+               </div>
             </div>
         )
     }

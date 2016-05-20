@@ -12,6 +12,10 @@ header {
     z-index: 2;
 
 }
+body{
+    height: 100%;
+    overflow-y:hidden;
+}
 h1 {
     line-height: 80px;
     font-size: 1.5em;
@@ -33,7 +37,6 @@ h1 {
 
 .msgBoard{
     float: right;
-    width: 30%;
 }
 .processBoard{
     float: left;

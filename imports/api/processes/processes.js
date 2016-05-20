@@ -15,5 +15,3 @@ let demoSchema1 = {
     userIds: [321214,42141,12312,1,1,1]
 };
 
-Processes.insert(demoSchema)
-

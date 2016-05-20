@@ -1,6 +1,6 @@
 import React from 'react';
 import ReplyText from './ReplyText.jsx';
-import {MessageBox} from './MessageBox.jsx';
+import {MessageBox} from './messageBox.jsx';
 export default class msgBoard extends React.Component{
     constructor(props){
         super(props);

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Router, Route, browserHistory } from 'react-router';
 import App from '../../ui/pages/App.jsx';
-import {MessageBox} from '../../ui/components/MessageBox.jsx'
+import {MessageBox} from '../../ui/components/messageBox.jsx'
 
 import OperatorBoard from '../../ui/pages/OperatorBoard.jsx';
 import OfflinePage from '../../ui/pages/OfflinePage.jsx';
