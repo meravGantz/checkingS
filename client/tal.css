@@ -2,6 +2,8 @@
 
 
 hr {
+    color: #f15651;
+
     display: block;
     height: 1px;
     width:82%;
@@ -9,13 +11,15 @@ hr {
     border-top: 1px solid #ccc;
     margin: 0 auto;
     padding: 0;
-    margin-bottom: 60px;
+    margin-bottom:60px;
 
 }
+
 .autoQuesCategory{
     font-family: "Alef Hebrew";
+    color: #403d3c;
     direction: rtl;
-    background: gray;
+    background: #dedede;
     width: 350px;
     height:600px;
     padding-top: 20px;
@@ -32,6 +36,7 @@ hr {
     text-align: center;
     font-size: 33px;
     padding: 10px;
+    color: #f15651;
 
 }
 #pubTransportation{
@@ -82,6 +87,7 @@ hr {
 }
 
 #basic-nav-dropdown{
+    font-family: "Alef Hebrew";
     width: 350px;
     margin-left: 310px;
     padding-top: 10px;
@@ -93,9 +99,11 @@ hr {
 
 #dropDownTitle{
     position: relative;
-    display: inline-block;;
-    margin-right: 120px;
-    background-image: url("img/hamburgersmall.svg");
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 230px;
+    margin-top: 40px;
+
 }
 
 .menu{
@@ -113,16 +121,19 @@ hr {
 
 #logo{
     float: left;
-    width: 40px;
-    margin-top: 13px;
-    margin-bottom: 4px;
+    width: 70px;
+    height: 80px;
 
 }
 
 #burger{
-    position: relative; top: 0;left:0;
+    position: relative;
     display: inline-block;
-    margin-right: 90px;
+    width:45px;
+    margin-right: 0px;
+    margin-left: 520px;
+    margin-top: 20px;
+
 }
 
 
@@ -132,7 +143,6 @@ hr {
 }
 
 .menuitem:hover{
-
     background-color: inherit;
     color:white;
 }

@@ -11,11 +11,11 @@ export default class App extends React.Component{
             <div>
                 <Navbar inverse id="navBarCss">
                     <Navbar.Brand>
-                    </Navbar.Brand>
+                        <img src="img/logo.png" id="logo"/>
+                    </Navbar.Brand  >
                     <Navbar.Collapse>
                     <Nav>
                         <div id="basic-nav-dropdown">
-                            <img src="img/hamburger.png" id="burger"/>
                             <NavDropdown eventKey={1} id="dropDownTitle">
                             <MenuItem className="menu"  eventKey={1.1} >מערכת מידע</MenuItem>
                             <MenuItem divider />
