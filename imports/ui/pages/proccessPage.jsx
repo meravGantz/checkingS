@@ -18,7 +18,7 @@ export default class ProccessPage extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            listState: false,
+            listState: true,
             label: "פתח תהליכים",
 
         };
@@ -65,15 +65,9 @@ export default class ProccessPage extends React.Component{
         });
         return (
             <div className = "totalCount">
-                <h1> תהליכים פתוחים </h1>
-                <RaisedButton
-                    label = {this.state.label}
-                    primary={true}
-                    onClick={this.handleClick}
-                />
                 <Badge badgeContent={this.calculateCounter()} primary={true} ></Badge>
                 {this.state.listState?
-                    <div style={{background:"gray", width:450}} className="scrollbar processList">
+                    <div  className="processList">
                         {processes}
                      </div>
                     :

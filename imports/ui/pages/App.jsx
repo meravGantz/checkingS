@@ -12,7 +12,7 @@ export default class App extends React.Component{
                         <a href="#">City-Bot</a>
                     </Navbar.Brand>
                 </Navbar>
-                <div className="container">
+                <div>
                     {this.props.children}
                 </div>
             </div>
