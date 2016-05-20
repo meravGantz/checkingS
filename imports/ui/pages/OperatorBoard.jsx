@@ -7,13 +7,13 @@ export default class App extends React.Component{
     }
     render(){
         return (
-            <div className="operatorBoard">
-                <div className="col-md-9">
+            <div className="operatorBoard row">
+                <div className="col-md-7">
                     <div className="processBoard">
                         <ProcessPage />
                     </div>
                 </div>
-               <div className="col-md-3">
+               <div className="col-md-5">
                     <div className="msgBoard">
                         <MsgContainer />
                     </div>

@@ -8,7 +8,6 @@
     background-color: white;
     right:-50px;
     text-align: center;
-
 }
 
 .proccesChatWindow{
@@ -62,8 +61,6 @@
 
 .totalCount{
     top:100px;
-
-
 }
 
 .textReplyWindow{
@@ -75,7 +72,7 @@
     right:-50px;
 }
 .processList{
-    position: absolute;
+    /*position: absolute;*/
     float: left;
     margin-left: 100px;
     height: 600px;

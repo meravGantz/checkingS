@@ -7,7 +7,7 @@ export default class App extends React.Component{
     render(){
         return (
             <div>
-                <Navbar inverse>
+                <Navbar inverse id="navBarCss">
                     <Navbar.Brand>
                         <a href="#">City-Bot</a>
                     </Navbar.Brand>
