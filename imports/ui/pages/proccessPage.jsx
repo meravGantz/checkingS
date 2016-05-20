@@ -64,10 +64,13 @@ export default class ProccessPage extends React.Component{
             )
         });
         return (
+
             <div className = "totalCount">
-                <Badge badgeContent={this.calculateCounter()} primary={true} ></Badge>
+                <Badge badgeContent={this.calculateCounter()} primary={true} badgeStyle = {{top:-1, right:-90}}></Badge>
                 {this.state.listState?
+
                     <div  className="processList">
+
                         {processes}
                      </div>
                     :
