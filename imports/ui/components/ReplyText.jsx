@@ -10,9 +10,10 @@ export default class ReplyText extends React.Component{
                     <div className="col-md-8">
                         <textarea className="form-control" type="text" onChange={this.props.handleText} />
                     </div>
-                        <button className="btn btn-primary" type="submit">Send</button>
-                        <button type="button" className="btn btn-danger" onClick={this.props.finishedSession}>Finished</button>
+                        <button id="send" className="btn " type="submit"><img src="img/send.png" /></button>
+
                 </div>
+                <button id="finish_it" type="button" className="btn " onClick={this.props.finishedSession}><img src="img/finished.png" /></button>
             </form>
         )
     }

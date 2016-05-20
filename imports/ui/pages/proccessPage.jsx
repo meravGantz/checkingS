@@ -12,6 +12,7 @@ import {List, ListItem} from 'material-ui/List';
 import FlatButton from 'material-ui/FlatButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import RaisedButton from 'material-ui/RaisedButton';
+import Badge from 'material-ui/Badge';
 
 export default class ProccessPage extends React.Component{
     constructor(props) {
@@ -62,29 +63,20 @@ export default class ProccessPage extends React.Component{
                          handleFinish={this.handleFinish} />
             )
         });
-        let textToWrite;
-        if (this.state.listState === "visible"){
-            textToWrite = "סגור תהליכים"
-        }
-        else{
-            textToWrite = this.state.buttonText + "\n" + processes.length + " תהליכים מחכים"
-        }
         return (
-            <div>
-                <h1> Open Processes </h1>
+            <div className = "totalCount">
+                <h1> תהליכים פתוחים </h1>
                 <RaisedButton
-                    label = {textToWrite}
+                    label = {this.state.label}
                     primary={true}
                     onClick={this.handleClick}
                 />
-                <div>
-                    {this.calculateCounter()}
-                </div>
+                <Badge badgeContent={this.calculateCounter()} primary={true} ></Badge>
                 {this.state.listState?
-                    <List>
-                        <Subheader inset={true}>Folders</Subheader>
+                    <div style={{background:"gray", width:450}}>
+
                         {processes}
-                     </List>
+                     </div>
                     :
                     null
                 }

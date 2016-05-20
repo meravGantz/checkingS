@@ -12,6 +12,25 @@ import {Constants} from '../../Constants.jsx';
 //};
 
 Meteor.startup(()=>{
+    if (Communication.find({}).count() == 0){
+       Communication.insert(
+           {
+               userFbId: "123",
+               messages: [
+                   {
+                       userMsg: true,
+                       msgContent: "Hey there"
+                   },
+                   {
+                       userMsg: true,
+                       msgContent: "heya"
+                   }
+               ],
+               responded: false
+           }
+       )
+    }
+
     if (Processes.find({}).count() == 0){
         Processes.insert(
             {

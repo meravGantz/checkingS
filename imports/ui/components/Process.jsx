@@ -10,6 +10,7 @@ import Avatar from 'material-ui/Avatar';
 import {List, ListItem} from 'material-ui/List';
 import ActionInfo from 'material-ui/svg-icons/action/info';
 import RaisedButton from 'material-ui/RaisedButton';
+import Badge from 'material-ui/Badge';
 
 import {red500, yellow500, blue500} from 'material-ui/styles/colors';
 export default class Process extends React.Component{
@@ -51,33 +52,37 @@ export default class Process extends React.Component{
         let imgSrc;
         let callText;
         if (this.props.process.processType === "garbage"){
+            imgSrc = "/img/garbage.png";
+            callText = "זבל ב" + this.props.process.location;
+        }
+        if (this.props.process.processType === "gardening"){
             imgSrc = "";
+            callText = "גננות  ב" + this.props.process.location;
+        }
+        if (this.props.process.processType === "animal"){
+            imgSrc = "";
+            callText = "דיווח על בעלי חיים ב "+ this.props.process.location;
         }
         return (
             <div className="row">
-                <ListItem
-                    leftAvatar={<Avatar icon={imgSrc} />}
-                    rightIcon={<ActionInfo />}
-                    primaryText={this.props.process.location}
-                    secondaryText={this.props.process.counter}
-                    style={{width:300}}
-                />
-                <RaisedButton
-                    label = "סיים טיפול"
-                    primary={true}
-                    onClick={this.handleFinish}
-                    style={{padding:2, align:"center"}}
-                />
-                <RaisedButton
-                    label = "העבר לנציג"
-                    primary={true}
-                    onClick={this.handleConversation}
-                    style={{padding:2, align:"center"}}
-                />
+
+                <div className = "proccesRect">
+
+                    <img src={imgSrc} className = "typeImage"/>
+                    <div className = "procText">{callText}</div>
+                    <img src="/img/finish.png"className = "finishIcon" onClick={this.handleFinish}/>
+                    <img src="/img/chat.png" className = "convIcon" onClick={this.handleConversation}/>
+                    <Badge className = "counter"
+                        badgeContent={this.props.process.userIds.length}
+                        primary={true}
+                    ></Badge>
+
+
+                </div>
                 {this.state.replyBool?
-                    <div className="row">
+                    <div className="row proccesChatWindow">
                         <div className="col-md-4 col-lg-4">
-                            <textarea className="form-control" onChange={this.handleReplyMsg}/>
+                            <textarea style = {{width:300}} className="form-control" onChange={this.handleReplyMsg}/>
                             <button className="btn btn-primary" onClick={this.handleReplySubmit}>Send</button>
                         </div>
                     </div>

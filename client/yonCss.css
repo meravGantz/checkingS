@@ -1,0 +1,65 @@
+
+.proccesRect{
+    position:relative;
+    width: 300px;
+    height:100px;
+    margin:30px;
+    background-color: white;
+    right:-50px;
+
+}
+
+.proccesChatWindow{
+    position:relative;
+    width: 300px;
+    height:100px;
+    margin:10px;
+    background-color: white;
+    left:20px;
+}
+
+.convIcon{
+    cursor: pointer;
+    position:absolute;
+    left: -20px;
+    top: 30px;
+    width: 30px;
+    height:30px;
+}
+
+.counter{
+    cursor: pointer;
+    position:absolute !important;
+    left: -20px;
+    top: -10px;
+
+
+}
+.procText{
+    padding-right: 10px;
+    text-align:center
+}
+
+.finishIcon{
+    cursor: pointer;
+    position:absolute;
+    left: -20px;
+    top: 80px;
+    width: 30px;
+    height:30px;
+}
+
+
+.typeImage{
+    position:absolute;
+    right: -35px;
+    top: 4px;
+    width: 92px;
+    height: 93px;
+}
+
+.totalCount{
+    top:100px;
+
+
+}

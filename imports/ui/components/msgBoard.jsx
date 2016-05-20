@@ -1,5 +1,6 @@
 import React from 'react';
 import ReplyText from './ReplyText.jsx';
+import {MessageBox} from './messageBox.jsx';
 export default class msgBoard extends React.Component{
     constructor(props){
         super(props);
@@ -44,7 +45,7 @@ export default class msgBoard extends React.Component{
                 console.log('sdf');
                 return(
                     <div key={Math.random()}>
-                        {message.userMsg? <h3>{message.msgContent}</h3> : <p>{message.msgContent}</p>}
+                        {message.userMsg? <MessageBox text={message.msgContent} isUser={true}/> : <MessageBox text={message.msgContent} isUser={false}/>}
                     </div>
                 )
             });
@@ -52,13 +53,16 @@ export default class msgBoard extends React.Component{
             activeChat = false;
         }
         return (
-            <div className="container">
-                <h3>Chat Board </h3>
+            <div className="msgBoard">
                 {activeChat?
-                    <div>
-                        {messages}
-                        <ReplyText textMsg={this.state.msgText} handleText={this.handleMsg}
+                    <div className="middleMsg">
+                        <div className="scrollbar">
+                            {messages}
+                        </div>
+                        <div className="reply">
+                            <ReplyText textMsg={this.state.msgText} handleText={this.handleMsg}
                                    handleSubmit={this.handleSubmit} finishedSession={this.finishedSession}/>
+                        </div>
                     </div> : <p> No Active Chat.</p>}
             </div>
         )
