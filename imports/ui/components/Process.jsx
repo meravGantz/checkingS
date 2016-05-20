@@ -24,6 +24,10 @@ export default class Process extends React.Component{
         this.handleConversation = this.handleConversation.bind(this);
         this.handleReplyMsg = this.handleReplyMsg.bind(this);
         this.handleReplySubmit = this.handleReplySubmit.bind(this);
+        this.closeReply = this.closeReply.bind(this);
+    }
+    closeReply(){
+        this.setState({replyBool: false})
     }
     getChildContext() {
         return {muiTheme: getMuiTheme()};
@@ -37,7 +41,7 @@ export default class Process extends React.Component{
     }
     handleConversation(){
         console.log('handleConversation');
-        this.setState({replyBool: true});
+        this.setState({replyBool: !this.state.replyBool});
     }
     handleReplySubmit(){
         Meteor.call('submitToUsers', this.props.process.userIds, this.state.replyMsg, (err, result)=>{
@@ -53,21 +57,23 @@ export default class Process extends React.Component{
         let callText;
         if (this.props.process.processType === "garbage"){
             imgSrc = "/img/garbage.png";
-            callText = "זבל ב" + this.props.process.location;
+            callText = "זבל ברחוב " + this.props.process.location;
         }
         if (this.props.process.processType === "gardening"){
-            imgSrc = "";
-            callText = "גננות  ב" + this.props.process.location;
+            imgSrc = "/img/garden.png";
+            callText = "גננות ברחוב " + this.props.process.location;
         }
         if (this.props.process.processType === "animal"){
-            imgSrc = "";
-            callText = "דיווח על בעלי חיים ב "+ this.props.process.location;
+            imgSrc = "/img/mosuqito.png";
+            callText = "הדברה ברחוב "+ this.props.process.location;
+        }
+        if (this.props.process.processType === "roadsLogo"){
+            imgSrc = "/img/roads.png";
+            callText = "בעיות תשתית ברחוב "+ this.props.process.location;
         }
         return (
             <div className="row">
-
                 <div className = "proccesRect">
-
                     <img src={imgSrc} className = "typeImage"/>
                     <div className = "procText">{callText}</div>
                     <img src="/img/finish.png"className = "finishIcon" onClick={this.handleFinish}/>
@@ -76,13 +82,11 @@ export default class Process extends React.Component{
                         badgeContent={this.props.process.userIds.length}
                         primary={true}
                     ></Badge>
-
-
                 </div>
                 {this.state.replyBool?
                     <div className="row textReplyWindow" style={{background:"gray"}}>
-                            <textarea style = {{width:450}} className="form-control " onChange={this.handleReplyMsg}/>
-                            <button className="btn btn-primary" onClick={this.handleReplySubmit}>Send</button>
+                        <textarea style = {{width:450}} className="form-control " onChange={this.handleReplyMsg}/>
+                        <button className="btn btn-primary marginLeft" onClick={this.handleReplySubmit} >Send</button>
                     </div>
                     :
                     null

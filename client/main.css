@@ -49,3 +49,7 @@ h1 {
 #navBarCss{
     margin-bottom: 0;
 }
+.marginLeft{
+    margin-top:5px;
+    margin-left: 10px;
+}

@@ -14,7 +14,7 @@ function composerFunction(props, onData){
 
     handle = Meteor.subscribe('processes');
     if (handle.ready()){
-        processes = Processes.find({});
+        processes = Processes.find({}, {sort: {counter: 1}});
         onData(null, {processes});
     }
 }

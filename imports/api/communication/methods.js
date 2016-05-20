@@ -79,6 +79,8 @@ if (Meteor.isServer){
         };
        let communicate = Communication.findOne({userFbId: userFbId});
        if (communicate){
+           console.log("found communicate");
+           console.log(communicate.messages);
            try{
                Communication.update({userFbId: userFbId}, {
                    $addToSet: {messages: message}
@@ -89,7 +91,7 @@ if (Meteor.isServer){
            return true;
        } else{
            try{
-               console.log("should be here");
+               console.log("dsfdsfdsf");
                Communication.insert({
                    userFbId: userFbId,
                    sessionId: sessionId,

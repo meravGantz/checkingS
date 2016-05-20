@@ -38,6 +38,7 @@ export default class msgBoard extends React.Component{
         })
     }
     render(){
+        console.log("msg board");
         let activeChat;
         let messages;;
         if (this.props.communication && this.props.communication.messages.length > 0){
@@ -64,7 +65,7 @@ export default class msgBoard extends React.Component{
                             <ReplyText msgText={this.state.msgText} handleText={this.handleMsg}
                                    handleSubmit={this.handleSubmit} finishedSession={this.finishedSession}/>
                         </div>
-                    </div> : <p> No Active Chat.</p>}
+                    </div> : <h2 className="text-center"> אין שיחות בתור</h2>}
             </div>
         )
     }

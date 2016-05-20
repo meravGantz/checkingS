@@ -56,7 +56,12 @@ export default class ProccessPage extends React.Component{
         this.setState({listState: !this.state.listState, label: newLabel});
     }
     render(){
-        const processes = this.props.processes.map((process)=>{
+        console.log("sdf");
+        let unSortedProcesses = this.props.processes.fetch();
+        unSortedProcesses.sort((a,b)=>{
+            return (b.userIds.length - a.userIds.length )
+        });
+        const processes = unSortedProcesses.map((process)=>{
             return (
                 <Process key={process._id} process={process} count={process.counter}
                          location={process.location} type={process.processType} userIds={process.userIds}
@@ -64,13 +69,10 @@ export default class ProccessPage extends React.Component{
             )
         });
         return (
-
             <div className = "totalCount">
-                <Badge badgeContent={this.calculateCounter()} primary={true} badgeStyle = {{top:-1, right:-90}}></Badge>
                 {this.state.listState?
 
                     <div  className="processList">
-
                         {processes}
                      </div>
                     :

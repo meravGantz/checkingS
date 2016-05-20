@@ -45,7 +45,8 @@ if (Meteor.isServer){
         if (process){
             try{
                 Processes.update({location: location}, {
-                    $addToSet: {userIds: userFbId}
+                    $addToSet: {userIds: userFbId},
+                    $inc: { counter: 1 }
                 });
             }catch(e){
                 console.log(e)
@@ -70,9 +71,7 @@ if (Meteor.isServer){
             // Let's say we want this function to accept a form-encoded request with
             // fields named `a` and `b`.
             var content = request.body;
-
-            // Since form enconding doesn't distinguish numbers and strings, we need
-            // to parse it manually
+            console.log(content);
             return [ content.processType, content.location, content.userFbId ];
         }
     })

@@ -12,34 +12,28 @@ import {Constants} from '../../Constants.jsx';
 //};
 
 Meteor.startup(()=>{
-    if (Communication.find({}).count() == 0){
-       Communication.insert(
-           {
-               userFbId: "123",
-               messages: [
-                   {
-                       userMsg: true,
-                       msgContent: "Hey there"
-                   },
-                   {
-                       userMsg: true,
-                       msgContent: "heya"
-                   }
-               ],
-               responded: false
-           }
-       )
-    }
-
     if (Processes.find({}).count() == 0){
-        Processes.insert(
-            {
-                processType: "garbage",
-                location: "היבוק",
-                counter: 1,
-                userIds: ['977048099078699']
-            }
-        )
+        Processes.insert({
+            processType: 'roadsLogo',
+            location: "אגריפס",
+            userIds: ['32432432']
+        });
+        Processes.insert({
+            processType: 'garbage',
+            location: "אלפסי",
+            userIds: ['324324321']
+        });
+        Processes.insert({
+            processType: 'animal',
+            location: "נהר פרת",
+            userIds: ['3243243213', '4564564564']
+        });
+        Processes.insert({
+            processType: "gardening",
+            location: "באר שבע",
+            userIds: ['3243243216', '43534543']
+        });
+
     }
     if (Questions.find({}).count() == 0){
         Questions.insert(
