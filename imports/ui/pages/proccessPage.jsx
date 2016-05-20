@@ -80,7 +80,7 @@ export default class ProccessPage extends React.Component{
                 />
                 <Badge badgeContent={this.calculateCounter()} primary={true} ></Badge>
                 {this.state.listState?
-                    <div style={{background:"gray", width:450}}>
+                    <div style={{background:"gray", width:450}} className="scrollbar processList">
                         {processes}
                      </div>
                     :
