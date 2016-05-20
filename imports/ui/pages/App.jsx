@@ -8,9 +8,8 @@ export default class App extends React.Component{
 
 
         return (
-            <div className="cityNav">
-                <Navbar inverse>
-                    <img src="img/logo.png" id="logo"/>
+            <div>
+                <Navbar inverse id="navBarCss">
                     <Navbar.Brand>
                     </Navbar.Brand>
                     <Navbar.Collapse>
@@ -29,11 +28,10 @@ export default class App extends React.Component{
                     </Nav>
                     </Navbar.Collapse>
                 </Navbar>
-                <div className="container">
+                <div>
                     {this.props.children}
                 </div>
             </div>
-
         )
     }
 }

@@ -46,3 +46,6 @@ h1 {
     width: 100%;
     direction: ltr;
 }
+#navBarCss{
+    margin-bottom: 0;
+}

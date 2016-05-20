@@ -26,6 +26,7 @@ export default class msgBoard extends React.Component{
                 console.log(res);
             }
         });
+        this.setState({msgText: ""});
     }
     finishedSession(){
         Meteor.call('finishedSession', this.props.communication.userFbId, this.props.communication.sessionId, (err, res)=>{
@@ -60,7 +61,7 @@ export default class msgBoard extends React.Component{
                             {messages}
                         </div>
                         <div className="reply">
-                            <ReplyText textMsg={this.state.msgText} handleText={this.handleMsg}
+                            <ReplyText msgText={this.state.msgText} handleText={this.handleMsg}
                                    handleSubmit={this.handleSubmit} finishedSession={this.finishedSession}/>
                         </div>
                     </div> : <p> No Active Chat.</p>}
