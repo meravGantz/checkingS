@@ -2,6 +2,8 @@
 
 
 hr {
+    color: #f15651;
+
     display: block;
     height: 1px;
     width:82%;
@@ -9,13 +11,15 @@ hr {
     border-top: 1px solid #ccc;
     margin: 0 auto;
     padding: 0;
-    margin-bottom: 60px;
+    margin-bottom:60px;
 
 }
+
 .autoQuesCategory{
     font-family: "Alef Hebrew";
+    color: #403d3c;
     direction: rtl;
-    background: gray;
+    background: #dedede;
     width: 350px;
     height:600px;
     padding-top: 20px;
@@ -24,6 +28,7 @@ hr {
 
 .allAutoCategories{
     margin-bottom: 30px;
+    margin-left: 250px;
 }
 
 .autoQuesTitle{
@@ -32,6 +37,7 @@ hr {
     text-align: center;
     font-size: 33px;
     padding: 10px;
+    color: #f15651;
 
 }
 #pubTransportation{
@@ -75,12 +81,69 @@ hr {
     padding: 8px;
 
 }
+.cityNav {
+    font-family: "Alef Hebrew";
+    direction: rtl;
+    font-size: 20px;
+}
 
-.noDiv{
+#basic-nav-dropdown{
+    font-family: "Alef Hebrew";
+    width: 350px;
+    margin-left: 310px;
+    padding-top: 10px;
+    /*padding-bottom: 20px;*/
+
 
 }
 
-.yesDiv{
+
+#dropDownTitle{
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 230px;
+    margin-top: 40px;
 
 }
 
+.menu{
+    position: relative;
+    width: 350px;
+    text-align: center;
+    padding: 10px;
+    height: 60px;
+    font-size: 20px;
+    opacity: 50;
+    background-color: #F1ECEB;
+
+
+}
+
+#logo{
+    float: left;
+    width: 70px;
+    height: 80px;
+
+}
+
+#burger{
+    position: relative;
+    display: inline-block;
+    width:45px;
+    margin-right: 0px;
+    margin-left: 520px;
+    margin-top: 20px;
+
+}
+
+
+.dropdown-menu{
+    left:54px;
+    background-color: #403D3C;
+}
+
+.menuitem:hover{
+    background-color: inherit;
+    color:white;
+}

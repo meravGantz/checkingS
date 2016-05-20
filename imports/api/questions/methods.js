@@ -9,7 +9,7 @@ Meteor.methods({
             let question = Questions.findOne(questionId);
             console.log(question);
             question.notifyUserId.forEach((userId)=>{
-                if (newState){
+                if (!newState){
                     responseMsg = question.trueAnswer;
                 }else{
                     responseMsg = question.falseAnswer;

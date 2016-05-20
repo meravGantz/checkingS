@@ -46,3 +46,10 @@ h1 {
     width: 100%;
     direction: ltr;
 }
+#navBarCss{
+    margin-bottom: 0;
+}
+.marginLeft{
+    margin-top:5px;
+    margin-left: 10px;
+}
