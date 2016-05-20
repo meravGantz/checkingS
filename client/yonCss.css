@@ -1,10 +1,10 @@
 
 .proccesRect{
     position:relative;
-    width: 300px;
+    width: 450px;
     height:100px;
     margin:30px;
-    margin-left: 80px;
+    margin-left: 120px;
     background-color: white;
     right:-50px;
     text-align: center;
@@ -22,7 +22,7 @@
 .convIcon{
     cursor: pointer;
     position:absolute;
-    left: -20px;
+    left: -15px;
     top: 30px;
     width: 30px;
     height:30px;
@@ -44,7 +44,7 @@
 .finishIcon{
     cursor: pointer;
     position:absolute;
-    left: -20px;
+    left: -15px;
     top: 80px;
     width: 30px;
     height:30px;
@@ -53,24 +53,32 @@
 
 .typeImage{
     position:absolute;
-    right: -35px;
-    top: 4px;
-    width: 92px;
-    height: 93px;
+    right: -38px;
+    top: 0px;
+    width: 96px;
+    height: 101px;
 }
 
 .totalCount{
     top:100px;
 }
 
+.totalCounter{
+    position: absolute;
+    top:100px;
+
+}
+
 .textReplyWindow{
     position:relative;
-    width: 300px;
+    width: 450px;
     height:100px;
-    margin:30px;
+    margin:20px;
+    margin-left: 120px;
     background-color: white;
     right:-50px;
 }
+
 .processList{
     /*position: absolute;*/
     float: left;

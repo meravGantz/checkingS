@@ -81,7 +81,7 @@ export default class Process extends React.Component{
                 </div>
                 {this.state.replyBool?
                     <div className="row textReplyWindow" style={{background:"gray"}}>
-                            <textarea style = {{width:300}} className="form-control " onChange={this.handleReplyMsg}/>
+                            <textarea style = {{width:450}} className="form-control " onChange={this.handleReplyMsg}/>
                             <button className="btn btn-primary" onClick={this.handleReplySubmit}>Send</button>
                     </div>
                     :
