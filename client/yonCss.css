@@ -5,7 +5,7 @@
     height:100px;
     margin:30px;
     background-color: white;
-    left:20px;
+    right:-50px;
 
 }
 
@@ -53,7 +53,13 @@
 .typeImage{
     position:absolute;
     right: -35px;
-    top: 5px;
+    top: 4px;
     width: 92px;
-    height: 92px;
+    height: 93px;
+}
+
+.totalCount{
+    top:100px;
+
+
 }
