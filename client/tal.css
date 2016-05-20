@@ -75,12 +75,33 @@ hr {
     padding: 8px;
 
 }
+.cityNav {
+    font-family: "Alef Hebrew";
+}
 
-.noDiv{
+#basic-nav-dropdown{
+    width: 350px;
+    margin-left: 310px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
 
 }
 
-.yesDiv{
+
+#dropDownTitle{
+    text-align: center;
+    width: 350px;
+    position: relative;
+    display: inline-block;
 
 }
+
+.menu{
+    width: 350px;
+    text-align: center;
+
+}
+
+
 
