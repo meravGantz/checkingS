@@ -10,18 +10,19 @@ export default class App extends React.Component{
         return (
             <div className="cityNav">
                 <Navbar inverse>
+                    <img src="img/logo.png" id="logo"/>
                     <Navbar.Brand>
-                        <a href="#">City-Bot</a>
                     </Navbar.Brand>
                     <Navbar.Collapse>
-                    <Nav className="burger">
+                    <Nav>
                         <div id="basic-nav-dropdown">
-                        <NavDropdown eventKey={1} title="Dropdown" id="dropDownTitle">
-                            <MenuItem className="menu" eventKey={1.1} >Offline</MenuItem>
+                            <img src="img/hamburger.png" id="burger"/>
+                            <NavDropdown eventKey={1} id="dropDownTitle">
+                            <MenuItem className="menu"  eventKey={1.1} >מערכת מידע</MenuItem>
                             <MenuItem divider />
-                            <MenuItem className="menu" eventKey={1.2}>Operator</MenuItem>
+                            <MenuItem className="menu" eventKey={1.2}>עמדת מפעיל</MenuItem>
                             <MenuItem divider />
-                            <MenuItem className="menu" eventKey={1.3}>Admin</MenuItem>
+                            <MenuItem className="menu" eventKey={1.3}>מצב העיר</MenuItem>
                         </NavDropdown>
                         </div>
 

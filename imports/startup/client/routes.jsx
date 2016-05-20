@@ -6,7 +6,7 @@ import {MessageBox} from '../../ui/components/messageBox.jsx'
 
 import OperatorBoard from '../../ui/pages/OperatorBoard.jsx';
 import OfflinePage from '../../ui/pages/OfflinePage.jsx';
-import MsgContainer from '../../ui/containers/MsgContainer.jsx';
+import MsgContainer from '../../ui/containers/msgContainer.jsx';
 import AutomaticQuestionsContainer from '../../ui/containers/AutomaticQuestionsContainer.jsx';
 import processesContainer from '../../ui/containers/processesContainer.jsx'
 const Demo = (props)=>{

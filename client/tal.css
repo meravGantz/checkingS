@@ -77,31 +77,62 @@ hr {
 }
 .cityNav {
     font-family: "Alef Hebrew";
+    direction: rtl;
+    font-size: 20px;
 }
 
 #basic-nav-dropdown{
     width: 350px;
     margin-left: 310px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    /*padding-bottom: 20px;*/
 
 
 }
 
 
 #dropDownTitle{
-    text-align: center;
-    width: 350px;
     position: relative;
-    display: inline-block;
-
+    display: inline-block;;
+    margin-right: 120px;
+    background-image: url("img/hamburgersmall.svg");
 }
 
 .menu{
+    position: relative;
     width: 350px;
     text-align: center;
+    padding: 10px;
+    height: 60px;
+    font-size: 20px;
+    opacity: 50;
+    background-color: #F1ECEB;
+
 
 }
 
+#logo{
+    float: left;
+    width: 40px;
+    margin-top: 13px;
+    margin-bottom: 4px;
+
+}
+
+#burger{
+    position: relative; top: 0;left:0;
+    display: inline-block;
+    margin-right: 90px;
+}
 
 
+.dropdown-menu{
+    left:54px;
+    background-color: #403D3C;
+}
+
+.menuitem:hover{
+
+    background-color: inherit;
+    color:white;
+}

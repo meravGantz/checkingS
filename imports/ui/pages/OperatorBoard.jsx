@@ -1,5 +1,5 @@
 import React from 'react';
-import MsgContainer from '../containers/MsgContainer.jsx';
+import MsgContainer from '../containers/msgContainer.jsx';
 import ProcessPage from '../containers/processesContainer.jsx';
 export default class App extends React.Component{
     constructor(props){
